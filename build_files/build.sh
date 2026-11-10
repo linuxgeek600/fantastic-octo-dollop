@@ -13,14 +13,14 @@ cp -avf "/ctx/system_files"/. /
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux
+dnf5 install -y kitty qt6-qtmultimedia cava
 
 # Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
+dnf5 -y copr enable duxlabs/dms
+dnf5 -y install dms --setopt=install_weak_deps=False
+dnf5 -y dux-greeter dux-search dux-files dux-calendar dux-gop
 # Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+dnf5 -y copr disable duxlabs/dms
 
 #### Example for enabling a System Unit File
 
