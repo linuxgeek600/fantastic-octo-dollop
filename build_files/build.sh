@@ -20,7 +20,7 @@ dnf5 -y copr enable duxlabs/dms
 dnf5 -y copr enable duxlabs/dux-repo
 dnf5 -y copr enable gerelef/BeamMP-Launcher
 dnf5 -y install dms --setopt=install_weak_deps=False
-dnf5 -y install dux-greeter dux-search dux-files dux-calendar dux-gop BeamMP-Luancher
+dnf5 -y install dux-greeter dux-search dux-files dux-calendar dux-gop BeamMP-Launcher
 # Disable COPRs so they don't end up enabled on the final image:
 dnf5 -y copr disable duxlabs/dms
 dnf5 -y copr disable duxlabs/dux-repo
