@@ -13,14 +13,14 @@ cp -avf "/ctx/system_files"/. /
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y kitty qt6-qtmultimedia cava
+dnf5 install -y
 
 # Use a COPR Example:
 dnf5 -y copr enable duxlabs/dms
 dnf5 -y copr enable duxlabs/dux-repo
 dnf5 -y copr enable gerelef/BeamMP-Launcher
 dnf5 -y install dms --setopt=install_weak_deps=False
-dnf5 -y install dux-greeter dux-search dux-files dux-calendar dux-gop BeamMP-Launcher
+dnf5 -y install kitty hyprland quickshell hyprland hyprland-guiutils matugen dux-greeter dux-search dux-calendar dux-files BeamMP-Launcher cava qt6-qtmultimedia
 # Disable COPRs so they don't end up enabled on the final image:
 dnf5 -y copr disable duxlabs/dms
 dnf5 -y copr disable duxlabs/dux-repo
