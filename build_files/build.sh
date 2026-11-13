@@ -19,12 +19,14 @@ cp -avf "/ctx/system_files"/. /
 dnf5 -y copr enable duxlabs/dms
 dnf5 -y copr enable duxlabs/dux-repo
 dnf5 -y copr enable gerelef/BeamMP-Launcher
+dnf5 -y  copr enable lionheartp/Hyprland 
 dnf5 -y install dms --setopt=install_weak_deps=False
 dnf5 -y install kitty hyprland quickshell hyprland hyprland-guiutils matugen dux-greeter dux-search dux-calendar dux-files BeamMP-Launcher cava qt6-qtmultimedia
 # Disable COPRs so they don't end up enabled on the final image:
 dnf5 -y copr disable duxlabs/dms
 dnf5 -y copr disable duxlabs/dux-repo
 dnf5 -y copr disable gerelef/BeamMP-Launcher
+dnf5 -y copr disable lionheartp/Hyprland
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
