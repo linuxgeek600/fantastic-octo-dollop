@@ -12,21 +12,48 @@ cp -avf "/ctx/system_files"/. /
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# this installs a package from fedora repos
-dnf5 install -y kitty eza lazygit easyeffects adw-gtk3-theme
 
-# Use a COPR Example:
+# Enable all repos.
 dnf5 -y copr enable duxlabs/dms
 dnf5 -y copr enable duxlabs/dux-repo
 dnf5 -y copr enable gerelef/BeamMP-Launcher
-dnf5 -y  copr enable lionheartp/Hyprland 
-dnf5 -y install dms --setopt=install_weak_deps=False
-dnf5 -y install hyprland quickshell hyprland hyprland-guiutils matugen dux-greeter dux-search dux-calendar dux-files BeamMP-Launcher cava qt6-qtmultimedia
-# Disable COPRs so they don't end up enabled on the final image:
+dnf5 -y  copr enable lionheartp/Hyprland
+dnf5 config-manager enable \
+	terra
+
+# Install all packages.
+dnf5 install -y \
+	kitty \
+	eza \
+	lazygit \
+	easyeffects \
+	adw-gtk3-theme \
+	hyprland \
+	quickshell \
+	hyprland-guiutils \
+	matugen \
+	dux-search \
+	dux-calendar \
+	dux-files \
+	BeamMP-Launcher \
+	cava \
+	qt6-qtmultimedia \
+	darkly \
+	zen-browser \
+	hyprmod \
+	lsp-plugins-lv2 \
+	calf \
+	gvfs-gphoto2 \
+	dms --setopt=install_weak_deps=False \
+	
+
+# Disable repos so they don't end up enabled on the final image:
 dnf5 -y copr disable duxlabs/dms
 dnf5 -y copr disable duxlabs/dux-repo
 dnf5 -y copr disable gerelef/BeamMP-Launcher
 dnf5 -y copr disable lionheartp/Hyprland
+dnf5 config-manager disable \
+	terra
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
