@@ -19,6 +19,7 @@ dnf5 -y copr enable whelanh/omarchy
 dnf5 -y copr enable duxlabs/dux-repo
 dnf5 -y copr enable gerelef/BeamMP-Launcher
 dnf5 -y  copr enable lionheartp/Hyprland
+dnf5 -y copr enable imput/helium
 dnf5 config-manager enable \
 	terra
 
@@ -47,10 +48,13 @@ dnf5 install -y \
 	gvfs-gphoto2 \
 	dms \
 	qtengine \
-	
+	audacity \
+	helium-bin \
 
 # Romve unwanted packages.
-dnf5 remove -y qt6ct
+dnf5 remove -y \
+	qt6ct \
+	
 
 # Disable repos so they don't end up enabled on the final image:
 dnf5 -y copr disable duxlabs/dms
@@ -58,6 +62,7 @@ dnf5 -y copr disable duxlabs/dux-repo
 dnf5 -y copr disable gerelef/BeamMP-Launcher
 dnf5 -y copr disable whelanh/omarchy
 dnf5 -y copr disable lionheartp/Hyprland
+dnf5 -y copr disable imput/helium
 dnf5 config-manager disable \
 	terra
 #### Example for enabling a System Unit File
