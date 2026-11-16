@@ -18,10 +18,9 @@ dnf5 -y copr enable duxlabs/dms
 dnf5 -y copr enable whelanh/omarchy
 dnf5 -y copr enable duxlabs/dux-repo
 dnf5 -y copr enable gerelef/BeamMP-Launcher
-dnf5 -y  copr enable lionheartp/Hyprland
+dnf5 -y copr enable lionheartp/Hyprland
 dnf5 -y copr enable imput/helium
-dnf5 config-manager enable \
-	terra
+dnf5 config-manager enable terra
 
 # Install all packages.
 dnf5 install -y \
@@ -63,8 +62,7 @@ dnf5 -y copr disable gerelef/BeamMP-Launcher
 dnf5 -y copr disable whelanh/omarchy
 dnf5 -y copr disable lionheartp/Hyprland
 dnf5 -y copr disable imput/helium
-dnf5 config-manager disable \
-	terra
+dnf5 config-manager disable terra
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
