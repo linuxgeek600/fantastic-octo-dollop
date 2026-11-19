@@ -48,12 +48,11 @@ dnf5 install -y \
 	dms \
 	qtengine \
 	audacity \
-	helium-bin \
+	helium \
 
 # Romve unwanted packages.
 dnf5 remove -y \
 	qt6ct \
-	
 
 # Disable repos so they don't end up enabled on the final image:
 dnf5 -y copr disable duxlabs/dms
