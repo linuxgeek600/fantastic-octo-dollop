@@ -45,7 +45,7 @@ dnf5 install -y \
 	dms \
 	qtengine \
 	audacity \
-	helium-browser \
+	helium-browser-bin \
 
 # Romve unwanted packages.
 dnf5 remove -y \
