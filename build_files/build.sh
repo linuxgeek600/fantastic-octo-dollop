@@ -27,7 +27,6 @@ dnf5 install -y \
 	eza \
 	lazygit \
 	easyeffects \
-	adw-gtk3-theme \
 	hyprland \
 	quickshell \
 	hyprland-guiutils \
@@ -43,11 +42,10 @@ dnf5 install -y \
 	hyprmod \
 	lsp-plugins-lv2 \
 	calf \
-	gvfs-gphoto2 \
 	dms \
 	qtengine \
 	audacity \
-	helium \
+	helium-browser \
 
 # Romve unwanted packages.
 dnf5 remove -y \
